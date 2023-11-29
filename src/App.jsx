@@ -17,7 +17,7 @@ function App(){
       <Beasts message="Make Your Beast..." ImgStuff={ImgStuff}/>
       <Main />
       <Gallery/>
-      <Footer />
+      <Footer copyright="DEAN Dre Ordo Nez&copy; Yes"/>
 
     </Container>
   );
