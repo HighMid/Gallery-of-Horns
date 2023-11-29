@@ -1,12 +1,27 @@
-import HornedBeast
- from "./HornedBeast";
-function Gallery(){
-    return(
-        <>
-        <HornedBeast title="DIABLO" imageUrl="./img/D_I_A_B_L_O.jpg" description="A being so evil he has a whole franchise named after him."/>
-        <HornedBeast title="DIABLO" imageUrl="./img/D_I_A_B_L_O.jpg" description="A being so evil he has a whole franchise named after him."/>
-        </>
-    );
-  }
+import HornedBeast from './HornedBeast';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Image from 'react-bootstrap/Image';
 
-  export default Gallery;
+function Gallery(props){
+    return(
+        <div>
+            <h2>{props.message}</h2>
+            <Container>
+
+                <Row>
+                    {props.ImgStuff.map((beast, index) => (
+                        <Col key={beast._id} md={4}>
+                        <HornedBeast ImgStuff={beast.image_url}/>
+                        </Col>
+                    ))};
+
+                </Row>
+                
+            </Container>
+        </div>
+    );
+}
+
+export default Gallery;
