@@ -12,9 +12,9 @@ function Beasts(props){
             <Container>
 
                 <Row>
-                    {props.ImgStuff.map((beast, index) => (
+                    {props.data.map((beast, index) => (
                         <Col key={beast._id} md={4}>
-                        <BeastImage ImgStuff={beast.image_url}/>
+                        <BeastImage data={beast.image_url}/>
                         </Col>
                     ))};
 
@@ -33,7 +33,7 @@ function BeastImage(props){
 
     return(
         <div style={{position: 'relative'}}>
-            <Image src={props.ImgStuff} alt="Hell yeah" rounded fluid></Image>
+            <Image src={props.data} alt="Hell yeah" rounded fluid></Image>
             <button
                 style={{
                     position: "absolute",

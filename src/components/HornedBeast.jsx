@@ -9,20 +9,36 @@ function HornedBeast(props){
   const toggleFavorite = () => setIsFavored(!isFavored);
 
   return(
+
       <div style={{position: 'relative'}}>
-          <Image src={props.ImgStuff} alt="Hell yeah" rounded fluid></Image>
+            <h2>{props.title}</h2>
+          <Image 
+          src={props.imgUrl} 
+          alt={props.title}
+          rounded 
+          fluid
+            onClick={() => props.onClick()}
+          />
           <button
+                onClick={(e) =>{
+                    e.stopPropagation();
+                    toggleFavorite();
+                }}
+
               style={{
-                  position: "absolute",
+                  position: "relative",
                   top: "10px",
                   right: "10px",
                   background: "none",
                   border: "none"
               }}
-              onClick={toggleFavorite}
+
               >
                   {isFavored ? <FaHeart color="red" /> : <FaRegHeart />} 
               </button>
+
+            <p>{props.description}</p>
+            <p>{props.keyword}</p>
       </div>
       
   );
