@@ -7,18 +7,26 @@ import Image from 'react-bootstrap/Image';
 function Gallery(props){
     return(
         <div>
-            <h2>{props.message}</h2>
+            <h2>{props.data.title}</h2>
             <Container>
 
                 <Row>
-                    {props.ImgStuff.map((beast, index) => (
+                    {props.data.map(
+                        beast => (
                         <Col key={beast._id} md={4}>
-                        <HornedBeast ImgStuff={beast.image_url}/>
+                        <HornedBeast 
+                            imgUrl={beast.image_url}
+                            title={beast.title}
+                            description={beast.description}
+                            keyword={beast.keyword}
+                            horns={beast.horns}
+                            onClick={() => props.updateSelectedCard(beast)}
+                            />
                         </Col>
-                    ))};
+                    ))
+                    }
 
                 </Row>
-                
             </Container>
         </div>
     );
