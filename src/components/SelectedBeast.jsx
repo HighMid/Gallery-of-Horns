@@ -3,14 +3,18 @@ import Button from 'react-bootstrap/Button';
 import React from 'react';
 
 function SelectedBeast(props){
+
     if (!props.data) return null;
+
+    const imageUrl = props.useAlternate && props.data.alternative_images ? props.data.alternative_images : props.data.image_url;
+
     return(
         <Modal show={props.show} onHide={props.close}>
             <Modal.Header closeButton>
                 <Modal.Title>{props.data.title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <img src={props.data.image_url} alt={props.data.title}/>
+                <img src={imageUrl} alt={props.data.title}/>
                 <p>{props.data.description}</p>
                 <p>KeyWord: {props.data.keyword}</p>
             </Modal.Body>

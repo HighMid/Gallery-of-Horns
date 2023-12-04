@@ -30,3 +30,9 @@ Start time: 1700
 Finish time: 2100
 
 Actual time needed to complete: 4 hours
+
+Nov 30 2023:
+
+Given that a user is presented with filtering options
+When the user clicks on one option
+Then the images should be filtered accordingly

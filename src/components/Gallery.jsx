@@ -16,10 +16,12 @@ function Gallery(props){
                         <Col key={beast._id} md={4}>
                         <HornedBeast 
                             imgUrl={beast.image_url}
+                            altImg={beast.alternative_images}
                             title={beast.title}
                             description={beast.description}
                             keyword={beast.keyword}
                             horns={beast.horns}
+                            useAlternate={props.useAlternate}
                             onClick={() => props.updateSelectedCard(beast)}
                             />
                         </Col>
