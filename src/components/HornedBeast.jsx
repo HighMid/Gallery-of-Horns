@@ -8,12 +8,15 @@ function HornedBeast(props){
 
   const toggleFavorite = () => setIsFavored(!isFavored);
 
+  const imageUrl = props.useAlternate && props.altImg ? props.altImg : props.imgUrl;
+
+
   return(
 
       <div style={{position: 'relative'}}>
             <h2>{props.title}</h2>
           <Image 
-          src={props.imgUrl} 
+          src={imageUrl} 
           alt={props.title}
           rounded 
           fluid
